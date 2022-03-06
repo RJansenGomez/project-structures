@@ -1,0 +1,3 @@
+rootProject.name = 'Monolith'
+include 'Monolith-segregated'
+include 'DDD'
