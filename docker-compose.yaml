@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  postgres-db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+      - ./devops/db/base_structure.sql:/docker-entrypoint-initdb.d/dummy_dump.sql
+volumes:
+  postgres-db:
+    driver: local
